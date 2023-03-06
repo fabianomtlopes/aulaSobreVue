@@ -23,9 +23,11 @@ export default {
    methods: {
     handleAddTarefa() {
       // this.$store.commit("adicionaTarefa", this.campoInput);
+      if(this.campoInput) {
       //quando se trabalha com actions se usa dispatch para atulizar em tempo real os dados.
       this.$store.dispatch("adicionaTarefa", this.campoInput);
       this.campoInput = null;
+      }
     },
   },
 };
